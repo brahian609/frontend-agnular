@@ -1,0 +1,262 @@
+<div class="container mt-4">
+
+  <div class="row-fluid">
+
+    <mat-card class="request-card">
+      <mat-card-header>
+        <mat-card-title>Request #: 117398</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+  </div>
+
+  <div class="row-fluid mt-3">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Creator</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="card-content">
+
+        <div class="row">
+
+          <div class="col-md-3">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Fuel Sales Rep.">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Created by">
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <mat-form-field class="input-width-70">
+              <input placeholder="Created On" matInput [matDatepicker]="picker1" [value]="date.value">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <mat-form-field class="input-width-50">
+              <input type="text" matInput [value]="'2:00'">
+              <mat-icon matSuffix>query_builder</mat-icon>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <div class="row-fluid mt-3">
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Aircraft</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="card-content">
+
+            <div class="row">
+
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input type="text" matInput placeholder="Registry">
+                  <mat-icon matSuffix (click)="openDialog()">view_comfy</mat-icon>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Aircraft Type">
+                </mat-form-field>
+              </div>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-md-6">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Operator</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="card-content">
+
+            <div class="row">
+
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Operator" [value]="'AERO WAYS INC.'">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Captain Name">
+                </mat-form-field>
+              </div>
+
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row-fluid mt-3">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Billing</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="card-content">
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <mat-form-field>
+              <mat-select [(value)]="billSelected" placeholder="Bill to">
+                <mat-option *ngFor="let bill of bills" [value]="bill.id">
+                  {{ bill.billing }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Credit Raiting" [value]="'All Services'">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Credit Status" [value]="'Needs Credit Check'">
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-md-4 mt-3">
+            <mat-checkbox color="primary" checked="true">Card Holder</mat-checkbox>
+          </div>
+          <div class="col-md-4 mt-3">
+            Account #: 11598
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Credit Remarks">
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row mt-4">
+
+          <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Credit Check By" [value]="'BShelley'">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-5">
+                <mat-form-field class="input-width-100">
+                  <input placeholder="Check On" matInput [matDatepicker]="picker5" [value]="date.value">
+                  <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                  <mat-datepicker #picker5></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="input-width-90">
+                  <input type="text" matInput [value]="'12:00'">
+                  <mat-icon matSuffix>query_builder</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Collector">
+            </mat-form-field>
+          </div>
+
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <div class="row-fluid mt-3 mb-5">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Fuel Authorizations</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="card-content">
+
+        <div class="row mat-elevation-z8 div-table">
+
+          <mat-table #table [dataSource]="dataSource" class="mat-cell">
+
+
+            <ng-container matColumnDef="authNum">
+              <mat-header-cell *matHeaderCellDef>Fuel Auth #</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.authNum}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="seq">
+              <mat-header-cell *matHeaderCellDef>Seq</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.seq}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="icao">
+              <mat-header-cell *matHeaderCellDef>ICAO</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.icao}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="airportCity">
+              <mat-header-cell *matHeaderCellDef>Airport City</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.airportCity}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef>Date/Time (Zulu)</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.date}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="handler">
+              <mat-header-cell *matHeaderCellDef>Handler</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.handler}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.status}}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+
+</div>

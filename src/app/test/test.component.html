@@ -1,0 +1,101 @@
+<div class="container mt-4">
+
+  <div class="row mat-elevation-z8">
+    <div class="row col-md-7 offset-1">
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label for="list" class="mt-4 col-sm-4">List</label>
+          <div class="col-sm-8">
+            <mat-form-field class="form-full">
+              <input id="list" matInput #filter>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label for="from" class="mt-4 col-sm-4">From</label>
+          <div class="col-sm-8">
+            <mat-form-field class="form-full">
+              <input id="from" matInput [matDatepicker]="picker1" [value]="date.value">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label for="to" class="mt-4 col-sm-4">To</label>
+          <div class="col-sm-8">
+            <mat-form-field class="form-full">
+              <input id="to" matInput [matDatepicker]="picker2" [value]="date.value">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 offset-1 text-right">
+      <button mat-raised-button color="primary" class="mt-3" [routerLink]="['new']">New</button>
+    </div>
+  </div>
+
+  <div class="row mat-elevation-z8 mt-4">
+
+    <mat-table #table [dataSource]="dataSource" class="mat-cell">
+
+
+      <ng-container matColumnDef="authNum">
+        <mat-header-cell *matHeaderCellDef>Authorization #</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.authNum}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="createdBy">
+        <mat-header-cell *matHeaderCellDef>Created By</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.createdBy}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="requestNum">
+        <mat-header-cell *matHeaderCellDef>Request #</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.requestNum}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="customer">
+        <mat-header-cell *matHeaderCellDef>Customer</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.customer}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="trip">
+        <mat-header-cell *matHeaderCellDef>Trip #</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.trip}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="tail">
+        <mat-header-cell *matHeaderCellDef>Tail #</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.tail}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="operator">
+        <mat-header-cell *matHeaderCellDef>Operator</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.operator}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="billTo">
+        <mat-header-cell *matHeaderCellDef>Bill To</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.billTo}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="creditStatus">
+        <mat-header-cell *matHeaderCellDef>Credit Status</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.creditStatus}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+</div>
+

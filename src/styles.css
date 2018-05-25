@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+mat-row:nth-child(even){
+  background-color: #fff;
+}
+
+mat-row:nth-child(odd){
+  background-color: #f2f3f5;
+}
